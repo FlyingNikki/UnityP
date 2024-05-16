@@ -40,7 +40,7 @@ public class Fireball : MonoBehaviour
         {
             string tag = collision2D.gameObject.tag;
 
-            if (tag != "Player")
+            if (tag == "Target")
             {
              Destroy(gameObject);
             }

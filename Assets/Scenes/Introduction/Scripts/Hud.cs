@@ -50,7 +50,7 @@ public class Hud : MonoBehaviour
         float ManaPercent = w.mana / maxMana;
         Mana_Image.transform.localScale = new Vector3(ManaPercent, 1, 1);
        
-        float ExpPercent = w.stats.Exp / maxExp;
+        float ExpPercent = (float)w.stats.Exp / maxExp;
         Exp_Image.transform.localScale = new Vector3(ExpPercent, 1, 1);
 
     }

@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEditor.Profiling;
 
@@ -8,8 +9,8 @@ public class PlayerStats
     public float maxHP = 100;
     public float maxMana = 50;
     public int maxLevel = 10;
-    public float maxExp = 200;
-    public float Exp = 0;
+    public double maxExp = 200;
+    public double Exp = 0;
     public int C_Level=1;
 
     public float manaRegeneration = 5;
@@ -21,8 +22,9 @@ public class PlayerStats
 
         maxHP = (float)(maxHP + (maxHP * 0.25));
         maxMana = (float)(maxMana + (maxMana * 0.25));
-        maxExp =(float)(maxExp + (maxExp * 0.80));
+        maxExp =(float)(maxExp + (maxExp * 0.25));
         healthRegeneration =(float)( healthRegeneration +(healthRegeneration*0.25)); 
+        movementSpeed =(float)(movementSpeed + (movementSpeed * 0.25));
         C_Level++;
 
     }
@@ -37,5 +39,10 @@ public class PlayerStats
             LevelUp();
 
         }
+    }
+
+    internal void GainEXP(float target_Exp)
+    {
+        throw new NotImplementedException();
     }
 }

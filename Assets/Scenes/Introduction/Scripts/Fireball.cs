@@ -7,11 +7,18 @@ using static UnityEngine.GraphicsBuffer;
 public class Fireball : MonoBehaviour
 {
     private Animator animator;
-    public Vector3 direction; 
+    public Vector3 direction;
+
+    public Wizard w;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+
+        
+
+
         animator = GetComponent<Animator>();
         float angle = Vector3.Angle(direction, Vector3.right);
 
@@ -31,7 +38,7 @@ public class Fireball : MonoBehaviour
     void Update()
     {
         
-        transform.position = transform.position + direction *4 * Time.deltaTime;
+        transform.position = transform.position + direction * 4 * Time.deltaTime;
        
        
     }

@@ -42,13 +42,13 @@ public class Target : MonoBehaviour
 
          
             Instantiate(target, position, Quaternion.identity);
-            Hud.score = Hud.score + 1;
+            GameManager.Instance.Score = GameManager.Instance.Score + 1;
             w = Wizard.player;
 
            
            
             
-            w.stats.GainEXP((int)Target_Exp);
+            Wizard.stats.GainEXP((int)Target_Exp);
             Destroy(gameObject);
         }
         if (tag == "Player")

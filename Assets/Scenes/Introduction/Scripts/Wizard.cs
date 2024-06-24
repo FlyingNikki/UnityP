@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 public class Wizard : MonoBehaviour
@@ -14,26 +16,44 @@ public class Wizard : MonoBehaviour
     Vector3 lastMovement = Vector3.zero;
     private Animator animator;
 
-    public PlayerStats stats;
+    public static PlayerStats stats;
+
+    
     
     public float hp;
-    public int level=0;
-    
     public float mana;
+
+    public static bool PauseA=false;
 
     // Start is called before the first frame update
     void Start()
     {
-        stats = new PlayerStats();
+        if (stats == null)
+        {
+            stats = new PlayerStats();
+           
+        }
+       
+             
+        
         mana = stats.maxMana;
         hp= stats.maxHP;
+        
         player = this;
         animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
+        if (PauseA)
+        {
+            return;
+
+        }
         //
         // Movement 
         //
@@ -106,7 +126,7 @@ public class Wizard : MonoBehaviour
             mana -= 10;
             GameObject obj = Instantiate(fireballPrefab, transform.position, Quaternion.identity);
             obj.GetComponent<Fireball>().direction = lastMovement;
-            castTimer = stats.castingTime;
+            castTimer =stats.castingTime;
             animator.SetBool("Attack", true);
         }
         if (Input.GetKeyUp(KeyCode.Space))
@@ -134,7 +154,7 @@ public class Wizard : MonoBehaviour
 
     public static PlayerStats GetStats()
     {
-        return player.stats;
+        return stats;
     }
 
 

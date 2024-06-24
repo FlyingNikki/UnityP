@@ -1,8 +1,9 @@
 using System;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using UnityEditor.PackageManager.Requests;
 using UnityEditor.Profiling;
 
-public class PlayerStats
+public  class PlayerStats
 {
     public float movementSpeed = 1.5f;
     public float castingTime = 1.5f;
@@ -16,6 +17,8 @@ public class PlayerStats
     public float manaRegeneration = 5;
     public float healthRegeneration = 5;
 
+    
+
 
 
     public void LevelUp() {
@@ -24,8 +27,10 @@ public class PlayerStats
         maxMana = (float)(maxMana + (maxMana * 0.25));
         maxExp =(float)(maxExp + (maxExp * 0.25));
         healthRegeneration =(float)( healthRegeneration +(healthRegeneration*0.25)); 
-        movementSpeed =(float)(movementSpeed + (movementSpeed * 0.25));
+        
         C_Level++;
+
+        
 
     }
 
@@ -45,4 +50,6 @@ public class PlayerStats
     {
         throw new NotImplementedException();
     }
+
+    
 }

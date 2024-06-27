@@ -79,6 +79,12 @@ public class GameManager : MonoBehaviour
 
         }
 
+        if (GMstate.Equals("Destroyed")) {
+            SceneManager.LoadScene("GameOver");
+            GMstate = "GameOverDone";
+        }
+
+
     }
 
 
@@ -105,6 +111,6 @@ public class GameManager : MonoBehaviour
        Application.Quit();
     }
 
+   
 
-     
 }

@@ -23,19 +23,39 @@ public class Pause : MonoBehaviour
 
     }
 
-      public void OnClickContinue() {
+      public void OnClickContinue(){
        
         gameObject.SetActive(false);
-        Time.timeScale = 1;
-        Wizard.PauseA = false;
-    }
+        ToggelContinue();
+      }
 
-    public void OnClickTitleScreen()
-    {
+      public void OnClickTitleScreen()
+      {
        
             SceneManager.LoadScene("GameManager");
             GameManager.GMstate = "Menü";
 
+            
         
-    }
+      }
+
+      public void ToggelBreak() { 
+        
+
+        
+        Wizard.PauseA = true;
+        Fireball.PauseA=true;
+        Time.timeScale = 0f;
+
+    
+      }
+
+      public void ToggelContinue()
+      {
+
+        Wizard.PauseA = false;
+        Fireball.PauseA = false;
+        Time.timeScale = 1f;
+
+      }
 }

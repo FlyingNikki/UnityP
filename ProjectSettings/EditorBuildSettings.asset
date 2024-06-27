@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Intruduction.unity
     guid: c187e4e2cb16f7a4189ee936450be67f
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: c28569cc96626534fb8ef25adbee29bc
   m_configObjects: {}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,15 +9,19 @@ public class Fireball : MonoBehaviour
 {
     private Animator animator;
     public Vector3 direction;
-
+    public static Boolean PauseA;
     public Wizard w;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        if (PauseA)
+        {
+            return;
 
-        
+        }
+
 
 
         animator = GetComponent<Animator>();

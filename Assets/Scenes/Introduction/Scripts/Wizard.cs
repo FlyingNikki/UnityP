@@ -147,7 +147,7 @@ public class Wizard : MonoBehaviour
         }
 
 
-
+        
     }
 
 
@@ -157,5 +157,10 @@ public class Wizard : MonoBehaviour
         return stats;
     }
 
+    public Vector3 getPositionWizard() {
 
+        
+        return transform.position;
+    
+    }
 }
